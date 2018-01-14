@@ -1,6 +1,6 @@
 {
   "name": "copy-paste-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
