@@ -1,6 +1,6 @@
 {
   "name": "copy-paste-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to create components, by copying and pasting existing ones.",
   "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
