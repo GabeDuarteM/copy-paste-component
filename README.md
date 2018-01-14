@@ -1,1 +1,1 @@
-"# copy-paste-component" 
+# copy-paste-component
