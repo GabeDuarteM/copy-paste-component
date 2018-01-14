@@ -67,7 +67,7 @@ export default NewApp
 * [ ] Accept arguments that answer the three initial questions
 * [ ] Integrate with editors (Initially just VSCode, but you can suggest more at the issues page)
 * [ ] Prompt which files to copy
-* [ ] Make it work with [...] (you can suggest more use cases at the issues page)
+* [ ] Make it work with ... (you can suggest more use cases at the issues page)
 
 ## Changelog
 
