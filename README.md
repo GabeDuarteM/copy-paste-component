@@ -71,7 +71,7 @@ export default NewApp
 
 ## Changelog
 
-See [CHANGELOG.md](github.com/GabrielDuarteM/copy-paste-component/blob/master/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/GabrielDuarteM/copy-paste-component/blob/master/CHANGELOG.md)
 
 ## License
 

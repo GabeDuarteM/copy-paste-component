@@ -1,3 +1,7 @@
+# 1.0.3
+
+* Removed conflict with the npm's markdown flavor in the README
+
 # 1.0.2
 
 * Added a CHANGELOG file
