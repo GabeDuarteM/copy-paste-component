@@ -48,15 +48,13 @@ const readWriteSync = (
   const data = readFileSync(fileSrc, "utf-8")
 
   const newValue = data.replace(
-    new RegExp(componentNameOriginal, "g"),
-    newComponentName,
+    new RegExp(`(\\W|^)(${componentNameOriginal})(\\W|$)`, "g"),
+    (match, p1, p2, p3) => `${p1}${newComponentName}${p3}`,
   )
 
   ensureDirSync(dirname(fileDest))
 
   writeFileSync(fileDest, newValue, "utf-8")
-
-  console.log("readFileSync complete")
 }
 
 glob(
@@ -109,5 +107,11 @@ glob(
         answers.componentName,
       )
     }
+
+    console.log(
+      `\nComponent ${answers.componentName} successfully created at ${dirname(
+        filesRenamed[0],
+      )}`,
+    )
   },
 )
