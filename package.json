@@ -2,25 +2,57 @@
   "name": "copy-paste-component",
   "version": "1.0.1",
   "description": "A tool to create components, by copying and pasting existing ones.",
+  "keywords": [
+    "cli",
+    "cli-app",
+    "frontend",
+    "front-end",
+    "development",
+    "dev",
+    "web",
+    "generate",
+    "generator",
+    "component",
+    "components",
+    "copy",
+    "paste",
+    "tool",
+    "scaffold",
+    "app",
+    "boilerplate"
+  ],
   "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
+  "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
   "scripts": {
     "prebuild": "yarn clean",
     "build": "babel bin -d dist",
     "build:dev": "yarn build --watch -s",
     "clean": "rimraf dist",
-    "lint": "eslint bin/*.js"
+    "lint": "eslint bin/*.js",
+    "build:ci": "yarn lint && yarn build",
+    "prepublishOnly": "yarn build:ci"
   },
   "bin": {
     "copy-paste-component": "dist/copy-paste-component.js",
     "cpc": "dist/copy-paste-component.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielDuarteM/copy-paste-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GabrielDuarteM/copy-paste-component/issues"
+  },
+  "engines": {
+    "node": ">=6"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
-    "eslint": "4.9.0",
+    "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.7.0",

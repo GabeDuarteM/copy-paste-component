@@ -59,3 +59,20 @@ const NewApp = () => <div>Hello World</div>
 
 export default NewApp
 ```
+
+## Roadmap
+
+* [x] Make it work with components using sub folders (e.g. `App/App.js`)
+* [ ] Make it work with components not using sub folders (e.g. just `App.js`)
+* [ ] Accept arguments that answer the three initial questions
+* [ ] Integrate with editors (Initially just VSCode, but you can suggest more at the issues page)
+* [ ] Prompt which files to copy
+* [ ] Make it work with [...] (you can suggest more use cases at the issues page)
+
+## Changelog
+
+See [CHANGELOG.md](github.com/GabrielDuarteM/copy-paste-component/blob/master/CHANGELOG.md)
+
+## License
+
+MIT
