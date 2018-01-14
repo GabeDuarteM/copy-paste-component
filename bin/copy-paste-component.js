@@ -2,7 +2,13 @@
 import glob from "glob"
 import { prompt } from "inquirer"
 import { basename, extname, dirname } from "path"
-import { readdirSync, statSync, copy } from "fs-extra"
+import {
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+  statSync,
+  ensureDirSync,
+} from "fs-extra"
 
 const walkSync = (dir, filelist = []) => {
   const dirSanitized = dir[dir.length - 1] !== "/" ? `${dir}/` : dir
@@ -31,6 +37,26 @@ const getFolderComponent = componentToBeCopied => {
   const parentBasename = basename(parentPath)
 
   return parentBasename === componentBasename ? dirname(parentPath) : parentPath
+}
+
+const readWriteSync = (
+  fileSrc,
+  fileDest,
+  componentNameOriginal,
+  newComponentName,
+) => {
+  const data = readFileSync(fileSrc, "utf-8")
+
+  const newValue = data.replace(
+    new RegExp(componentNameOriginal, "g"),
+    newComponentName,
+  )
+
+  ensureDirSync(dirname(fileDest))
+
+  writeFileSync(fileDest, newValue, "utf-8")
+
+  console.log("readFileSync complete")
 }
 
 glob(
@@ -63,22 +89,25 @@ glob(
     ])
 
     const files = walkSync(dirname(answers.componentToBeCopied))
+    const componentNameOriginal = basename(
+      answers.componentToBeCopied,
+      extname(answers.componentToBeCopied),
+    )
     const filesRenamed = files.map(file => {
       const x = file.replace(
-        new RegExp(
-          basename(
-            answers.componentToBeCopied,
-            extname(answers.componentToBeCopied),
-          ),
-          "g",
-        ),
+        new RegExp(componentNameOriginal, "g"),
         answers.componentName,
       )
       return x
     })
 
     for (let i = 0; i < filesRenamed.length; i += 1) {
-      copy(files[i], filesRenamed[i])
+      readWriteSync(
+        files[i],
+        filesRenamed[i],
+        componentNameOriginal,
+        answers.componentName,
+      )
     }
   },
 )
