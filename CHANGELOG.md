@@ -1,3 +1,7 @@
+# 1.0.4
+
+* Included the files property on packages.json
+
 # 1.0.3
 
 * Removed conflict with the npm's markdown flavor in the README

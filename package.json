@@ -25,6 +25,9 @@
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
+  "files": [
+    "dist/copy-paste-component.js"
+  ],
   "scripts": {
     "prebuild": "yarn clean",
     "build": "babel bin -d dist",
