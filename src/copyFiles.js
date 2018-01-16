@@ -1,4 +1,4 @@
-import readWriteSync from "./readWriteSync"
+import overwriteComponentName from "./overwriteComponentName"
 
 export default (
   filesRenamed,
@@ -7,7 +7,7 @@ export default (
   newComponentName,
 ) => {
   for (let i = 0; i < filesRenamed.length; i += 1) {
-    readWriteSync(
+    overwriteComponentName(
       files[i],
       filesRenamed[i],
       componentNameOriginal,
