@@ -1,4 +1,8 @@
 # copy-paste-component
+[![npm downloads](https://img.shields.io/npm/dw/copy-paste-component.svg)](https://www.npmjs.com/package/copy-paste-component)
+[![npm version](https://img.shields.io/npm/v/copy-paste-component.svg)](https://www.npmjs.com/package/copy-paste-component)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 A tool to create components, by copying and pasting existing ones.
 If you have the structure below:
@@ -60,10 +64,16 @@ const NewApp = () => <div>Hello World</div>
 export default NewApp
 ```
 
+## Screenshots
+
+![Component selection](https://i.imgur.com/2Pe6FBt.png)
+![Component created](https://i.imgur.com/mZfgg1z.png)
+
 ## Roadmap
 
 * [x] Make it work with components using sub folders (e.g. `App/App.js`)
-* [ ] Make it work with components not using sub folders (e.g. just `App.js`)
+* [x] Make it work with components not using sub folders (e.g. just `App.js`)
+* [ ] Add tests coverage
 * [ ] Accept arguments that answer the three initial questions
 * [ ] Integrate with editors (Initially just VSCode, but you can suggest more at the issues page)
 * [ ] Prompt which files to copy
