@@ -26,20 +26,20 @@
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
   "files": [
-    "dist/copy-paste-component.js"
+    "dist"
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "babel bin -d dist",
+    "build": "babel src -d dist --ignore *.test.js",
     "build:dev": "yarn build --watch -s",
     "clean": "rimraf dist",
-    "lint": "eslint bin/*.js",
+    "lint": "eslint src/*.js",
     "build:ci": "yarn lint && yarn build",
     "prepublishOnly": "yarn build:ci"
   },
   "bin": {
-    "copy-paste-component": "dist/copy-paste-component.js",
-    "cpc": "dist/copy-paste-component.js"
+    "copy-paste-component": "dist/bin.js",
+    "cpc": "dist/bin.js"
   },
   "repository": {
     "type": "git",
@@ -66,6 +66,7 @@
   "dependencies": {
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
-    "inquirer": "^5.0.0"
+    "inquirer": "^5.0.0",
+    "klaw-sync": "^3.0.2"
   }
 }
