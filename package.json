@@ -1,7 +1,8 @@
 {
   "name": "copy-paste-component",
   "version": "1.0.4",
-  "description": "A tool to create components, by copying and pasting existing ones.",
+  "description":
+    "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
     "cli-app",
@@ -21,14 +22,14 @@
     "app",
     "boilerplate"
   ],
-  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author":
+    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
+    "start": "yarn build:dev",
     "prebuild": "yarn clean",
     "build": "babel src -d dist --ignore *.test.js",
     "build:dev": "yarn build --watch -s",
