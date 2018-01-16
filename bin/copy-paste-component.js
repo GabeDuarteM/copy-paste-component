@@ -57,61 +57,69 @@ const readWriteSync = (
   writeFileSync(fileDest, newValue, "utf-8")
 }
 
-glob(
-  "!(node_modules)**/{components,containers}/**/!(index|*.test*|*.stories*)*.{js,jsx,tsx}",
-  async (err, matches) => {
-    if (err) {
-      throw err
-    }
+const ignore = [
+  "**/node_modules/**",
+  "**/{__tests__,test,tests}/**",
+  "**/*.{test,spec,stories}.*",
+]
 
-    const answers = await prompt([
-      {
-        name: "componentToBeCopied",
-        message: "Which component would you like to copy?",
-        choices: matches,
-        type: "list",
-      },
-      {
-        name: "componentName",
-        message: "What is the name of the new component?",
-        validate: input =>
-          input ? true : "Inform a valid name for the component",
-      },
-      {
-        name: "componentLocation",
-        message: "What is the location of the new component?",
-        type: "input",
-        default: ({ componentToBeCopied }) =>
-          getFolderComponent(componentToBeCopied),
-      },
-    ])
+glob("**/[A-Z]*.{js,jsx,tsx}", { ignore }, async (err, matches) => {
+  if (err) {
+    throw err
+  }
 
-    const files = walkSync(dirname(answers.componentToBeCopied))
-    const componentNameOriginal = basename(
-      answers.componentToBeCopied,
-      extname(answers.componentToBeCopied),
+  if (matches.length === 0) {
+    console.log("Components were not found in this project.")
+    return
+  }
+
+  const answers = await prompt([
+    {
+      name: "componentToBeCopied",
+      message: "Which component would you like to copy?",
+      choices: matches,
+      type: "list",
+    },
+    {
+      name: "componentName",
+      message: "What is the name of the new component?",
+      validate: input =>
+        input ? true : "Inform a valid name for the component",
+    },
+    {
+      name: "componentLocation",
+      message: "What is the location of the new component?",
+      type: "input",
+      default: ({ componentToBeCopied }) =>
+        getFolderComponent(componentToBeCopied),
+    },
+  ])
+
+  const files = walkSync(dirname(answers.componentToBeCopied))
+  const componentNameOriginal = basename(
+    answers.componentToBeCopied,
+    extname(answers.componentToBeCopied),
+  )
+  const filesRenamed = files.map(file => {
+    const x = file.replace(
+      new RegExp(componentNameOriginal, "g"),
+      answers.componentName,
     )
-    const filesRenamed = files.map(file => {
-      const x = file.replace(
-        new RegExp(componentNameOriginal, "g"),
-        answers.componentName,
-      )
-      return x
-    })
+    return x
+  })
 
-    for (let i = 0; i < filesRenamed.length; i += 1) {
-      readWriteSync(
-        files[i],
-        filesRenamed[i],
-        componentNameOriginal,
-        answers.componentName,
-      )
-    }
-
-    console.log(
-      `\nComponent ${answers.componentName} successfully created at ${dirname(
-        filesRenamed[0],
-      )}`,
+  for (let i = 0; i < filesRenamed.length; i += 1) {
+    readWriteSync(
+      files[i],
+      filesRenamed[i],
+      componentNameOriginal,
+      answers.componentName,
     )
-  },
-)
+  }
+
+  console.log(
+    `\nComponent ${answers.componentName} successfully created at ${dirname(
+      filesRenamed[0],
+    )}`,
+  )
+})

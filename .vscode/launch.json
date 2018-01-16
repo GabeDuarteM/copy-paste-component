@@ -8,15 +8,14 @@
       "type": "node",
       "request": "attach",
       "name": "Attach Program",
-      "processId": "${command:PickProcess}",
+      "processId": "${command:PickProcess}"
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/dist/copy-paste-component",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/dummyComponents/folder-structure"
+      "console": "integratedTerminal"
     }
   ]
 }
