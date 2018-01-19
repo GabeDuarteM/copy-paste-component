@@ -44,7 +44,9 @@ describe("componentFinder", () => {
     console.error = jest.fn()
 
     await expect(componentFinder("/")).rejects.toThrow(
-      "operation not permitted,",
+      process.platform === "win32"
+        ? "operation not permitted"
+        : "permission denied",
     )
 
     console.error = consoleError
