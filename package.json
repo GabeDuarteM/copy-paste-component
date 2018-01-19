@@ -56,7 +56,8 @@
     "node": ">=6"
   },
   "jest": {
-    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"]
+    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"],
+    "collectCoverageFrom": ["src/*.js"]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
