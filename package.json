@@ -35,6 +35,7 @@
     "build:dev": "yarn build --watch -s",
     "clean": "rimraf dist",
     "lint": "eslint src/*.js",
+    "lint:fix": "eslint src/*.js --fix",
     "test": "jest",
     "test:w": "yarn test --watch",
     "build:ci": "yarn lint && yarn test && yarn build",
