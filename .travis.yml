@@ -6,4 +6,3 @@ script:
   - yarn build:ci
 os:
   - linux
-  - osx
