@@ -1,0 +1,28 @@
+.AppContainer {
+  text-align: center;
+}
+
+.AppContainer-logo {
+  animation: AppContainer-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.AppContainer-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.AppContainer-title {
+  font-size: 1.5em;
+}
+
+.AppContainer-intro {
+  font-size: large;
+}
+
+@keyframes AppContainer-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
