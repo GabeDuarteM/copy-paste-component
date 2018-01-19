@@ -1,7 +1,8 @@
 {
   "name": "copy-paste-component",
   "version": "1.0.4",
-  "description": "A tool to create components, by copying and pasting existing ones.",
+  "description":
+    "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
     "cli-app",
@@ -21,13 +22,12 @@
     "app",
     "boilerplate"
   ],
-  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author":
+    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "start": "yarn build:dev",
     "prebuild": "yarn clean",
@@ -35,7 +35,9 @@
     "build:dev": "yarn build --watch -s",
     "clean": "rimraf dist",
     "lint": "eslint src/*.js",
-    "build:ci": "yarn lint && yarn build",
+    "test": "jest",
+    "test:w": "yarn test --watch",
+    "build:ci": "yarn lint && yarn test && yarn build",
     "prepublishOnly": "yarn build:ci"
   },
   "bin": {
@@ -52,6 +54,9 @@
   "engines": {
     "node": ">=6"
   },
+  "jest": {
+    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -61,6 +66,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-prettier": "^2.4.0",
+    "jest": "^22.1.3",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2"
   },
