@@ -6,9 +6,9 @@ const ignore = [
   "**/*.{test,spec,stories}.*",
 ]
 
-export default () =>
+export default (cwd = process.cwd()) =>
   new Promise((resolve, reject) =>
-    glob("**/[A-Z]*.{js,jsx,tsx}", { ignore }, (err, matches) => {
+    glob("**/[A-Z]*.{js,jsx,tsx}", { ignore, cwd }, (err, matches) => {
       if (err) {
         reject(err)
       }
