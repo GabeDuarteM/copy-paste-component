@@ -1,4 +1,8 @@
 # copy-paste-component
+
+[![travis](https://img.shields.io/travis/GabrielDuarteM/copy-paste-component/master.svg)](https://travis-ci.org/GabrielDuarteM/copy-paste-component)
+[![appveyor](https://img.shields.io/appveyor/ci/gabrielduartem/copy-paste-component/master.svg)](https://ci.appveyor.com/project/GabrielDuarteM/copy-paste-component)
+[![codecov](https://img.shields.io/codecov/c/github/GabrielDuarteM/copy-paste-component.svg)](https://codecov.io/gh/GabrielDuarteM/copy-paste-component)
 [![npm downloads](https://img.shields.io/npm/dw/copy-paste-component.svg)](https://www.npmjs.com/package/copy-paste-component)
 [![npm version](https://img.shields.io/npm/v/copy-paste-component.svg)](https://www.npmjs.com/package/copy-paste-component)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
