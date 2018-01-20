@@ -1,8 +1,7 @@
 {
   "name": "copy-paste-component",
   "version": "1.0.4",
-  "description":
-    "A tool to create components, by copying and pasting existing ones.",
+  "description": "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
     "cli-app",
@@ -22,12 +21,13 @@
     "app",
     "boilerplate"
   ],
-  "author":
-    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "yarn build:dev",
     "prebuild": "yarn clean",
@@ -56,27 +56,31 @@
     "node": ">=6"
   },
   "jest": {
-    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"],
-    "collectCoverageFrom": ["src/*.js"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/fixtures/"
+    ],
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
-    "eslint": "^4.15.0",
+    "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-prettier": "^2.4.0",
-    "jest": "^22.1.3",
+    "eslint-plugin-prettier": "^2.5.0",
+    "jest": "^22.1.4",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
-    "inquirer": "^5.0.0",
+    "inquirer": "^5.0.1",
     "klaw-sync": "^3.0.2"
   }
 }
