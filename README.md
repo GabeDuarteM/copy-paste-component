@@ -64,10 +64,7 @@ const NewApp = () => <div>Hello World</div>
 export default NewApp
 ```
 
-## Screenshots
-
-![Component selection](https://i.imgur.com/2Pe6FBt.png)
-![Component created](https://i.imgur.com/mZfgg1z.png)
+![Usage](https://thumbs.gfycat.com/ColorlessSelfassuredDonkey-max-14mb.gif)
 
 ## Roadmap
 
