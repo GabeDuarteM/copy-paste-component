@@ -1,3 +1,7 @@
+# 1.0.5
+
+* Now the component location is correctly being considered
+
 # 1.0.4
 
 * Included the files property on packages.json

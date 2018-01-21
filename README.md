@@ -74,7 +74,7 @@ export default NewApp
 
 * [x] Make it work with components using sub folders (e.g. `App/App.js`)
 * [x] Make it work with components not using sub folders (e.g. just `App.js`)
-* [ ] Add tests coverage
+* [x] Add tests coverage
 * [ ] Accept arguments that answer the three initial questions
 * [ ] Integrate with editors (Initially just VSCode, but you can suggest more at the issues page)
 * [ ] Prompt which files to copy
