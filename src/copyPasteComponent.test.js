@@ -1,8 +1,8 @@
 import { prompt } from "inquirer"
+import { join } from "path"
 import copyPasteComponent from "./copyPasteComponent"
 import componentFinder from "./componentFinder"
 import listFilesInsideDir from "./listFilesInsideDir"
-import getFolderComponent from "./getFolderComponent"
 import getRenamedFiles from "./getRenamedFiles"
 import copyFiles from "./copyFiles"
 
@@ -16,7 +16,6 @@ jest.mock("./componentFinder", () =>
     ]),
   ),
 )
-jest.mock("./getFolderComponent", () => jest.fn(() => "src/components"))
 jest.mock("./listFilesInsideDir", () =>
   jest.fn(() => [
     "src/components/App/App.js",
@@ -26,12 +25,7 @@ jest.mock("./listFilesInsideDir", () =>
   ]),
 )
 jest.mock("./getRenamedFiles", () =>
-  jest.fn(() => [
-    "src/components/NewApp/NewApp.js",
-    "src/components/NewApp/NewApp.test.js",
-    "src/components/NewApp/NewApp.md",
-    "src/components/NewApp/index.md",
-  ]),
+  jest.fn(() => ["NewApp.js", "NewApp.test.js", "NewApp.md", "index.md"]),
 )
 jest.mock("./copyFiles", () => jest.fn(() => {}))
 jest.mock("inquirer", () => ({
@@ -39,15 +33,20 @@ jest.mock("inquirer", () => ({
     Promise.resolve({
       componentToBeCopied: "src/components/App/App.js",
       componentName: "NewApp",
+      componentLocation: "src/components/NewApp",
     }),
   ),
 }))
 
 describe("copyPasteComponent", () => {
-  it("should call all the mocked functions properly", async () => {
-    const clgLogBackup = console.log
+  const clgLogBackup = console.log
+  beforeAll(() => {
     console.log = jest.fn()
-
+  })
+  afterAll(() => {
+    console.log = clgLogBackup
+  })
+  it("should call all the mocked functions properly", async () => {
     await copyPasteComponent()
     const componentToBeCopied = "src/components/App/App.js"
 
@@ -66,15 +65,11 @@ describe("copyPasteComponent", () => {
       {
         name: "componentName",
         message: "What is the name of the new component?",
-        validate: input =>
-          input ? true : "Inform a valid name for the component",
       },
       {
         name: "componentLocation",
         message: "What is the location of the new component?",
         type: "input",
-        default: ({ componentToBeCopied: defComponentToBeCopied }) =>
-          getFolderComponent(defComponentToBeCopied),
       },
     ]
 
@@ -94,12 +89,12 @@ describe("copyPasteComponent", () => {
     expect(prompt.mock.calls[0][0][2].name).toEqual(prompts[2].name)
     expect(prompt.mock.calls[0][0][2].message).toEqual(prompts[2].message)
     expect(prompt.mock.calls[0][0][2].type).toEqual(prompts[2].type)
-    expect(prompt.mock.calls[0][0][2].default({ componentToBeCopied })).toEqual(
-      "src/components",
-    )
-
-    expect(getFolderComponent).toHaveBeenCalledTimes(1)
-    expect(getFolderComponent).toHaveBeenCalledWith(componentToBeCopied)
+    expect(
+      prompt.mock.calls[0][0][2].default({
+        componentToBeCopied,
+        componentName: "NewApp",
+      }),
+    ).toEqual(join("src", "components", "NewApp"))
 
     expect(listFilesInsideDir).toHaveBeenCalledTimes(1)
     expect(listFilesInsideDir).toHaveBeenCalledWith(componentToBeCopied)
@@ -119,10 +114,10 @@ describe("copyPasteComponent", () => {
     expect(copyFiles).toHaveBeenCalledTimes(1)
     expect(copyFiles).toHaveBeenCalledWith(
       [
-        "src/components/NewApp/NewApp.js",
-        "src/components/NewApp/NewApp.test.js",
-        "src/components/NewApp/NewApp.md",
-        "src/components/NewApp/index.md",
+        join("src", "components", "NewApp", "NewApp.js"),
+        join("src", "components", "NewApp", "NewApp.test.js"),
+        join("src", "components", "NewApp", "NewApp.md"),
+        join("src", "components", "NewApp", "index.md"),
       ],
       [
         "src/components/App/App.js",
@@ -136,16 +131,28 @@ describe("copyPasteComponent", () => {
 
     expect(console.log).toHaveBeenCalledTimes(1)
     expect(console.log).toHaveBeenCalledWith(
-      "\nComponent NewApp successfully created at src/components/NewApp",
+      `\nComponent NewApp successfully created at ${join(
+        "src",
+        "components",
+        "NewApp",
+      )}`,
     )
-    console.log = clgLogBackup
+  })
+
+  it("should return the correct default path when the component's parent folder name is different than the component's name", async () => {
+    jest.clearAllMocks()
+    await copyPasteComponent()
+    expect(
+      prompt.mock.calls[0][0][2].default({
+        componentToBeCopied: join("src", "components", "App"),
+        componentName: "NewApp",
+      }),
+    ).toBe(join("src", "components"))
   })
 
   it("should log a message if no components are found", async () => {
     jest.clearAllMocks()
     componentFinder.mockImplementation(() => [])
-    const clgLogBackup = console.log
-    console.log = jest.fn()
 
     await copyPasteComponent()
 
@@ -157,7 +164,5 @@ describe("copyPasteComponent", () => {
     expect(console.log).toHaveBeenCalledWith(
       "Components were not found in this project.",
     )
-
-    console.log = clgLogBackup
   })
 })

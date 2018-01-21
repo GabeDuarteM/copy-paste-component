@@ -1,8 +1,7 @@
 import { prompt } from "inquirer"
-import { basename, extname, dirname } from "path"
+import { basename, extname, dirname, join } from "path"
 
 import componentFinder from "./componentFinder"
-import getFolderComponent from "./getFolderComponent"
 import listFilesInsideDir from "./listFilesInsideDir"
 import getRenamedFiles from "./getRenamedFiles"
 import copyFiles from "./copyFiles"
@@ -15,7 +14,11 @@ export default async () => {
     return
   }
 
-  const { componentToBeCopied, componentName } = await prompt([
+  const {
+    componentToBeCopied,
+    componentName,
+    componentLocation,
+  } = await prompt([
     {
       name: "componentToBeCopied",
       message: "Which component would you like to copy?",
@@ -32,8 +35,22 @@ export default async () => {
       name: "componentLocation",
       message: "What is the location of the new component?",
       type: "input",
-      default: ({ componentToBeCopied: defComponentToBeCopied }) =>
-        getFolderComponent(defComponentToBeCopied),
+      default: ({
+        componentToBeCopied: defComponentToBeCopied,
+        componentName: defComponentName,
+      }) => {
+        const componentBasename = basename(
+          defComponentToBeCopied,
+          extname(defComponentToBeCopied),
+        )
+
+        const parentPath = dirname(defComponentToBeCopied)
+        const parentBasename = basename(parentPath)
+
+        return parentBasename === componentBasename
+          ? join(dirname(parentPath), defComponentName)
+          : parentPath
+      },
     },
   ])
 
@@ -48,7 +65,7 @@ export default async () => {
     files,
     componentNameOriginal,
     componentName,
-  )
+  ).map(x => join(componentLocation, x))
 
   copyFiles(filesRenamed, files, componentNameOriginal, componentName)
 

@@ -7,14 +7,14 @@ describe("getRenamedFiles", () => {
       "src/components/App.test.js",
       "src/components/App.md",
       "src/components/App.css",
-      "src/components/index",
+      "src/components/index.js",
     ]
     const newFiles = [
-      "src/components/NewApp.js",
-      "src/components/NewApp.test.js",
-      "src/components/NewApp.md",
-      "src/components/NewApp.css",
-      "src/components/index",
+      "NewApp.js",
+      "NewApp.test.js",
+      "NewApp.md",
+      "NewApp.css",
+      "index.js",
     ]
 
     const componentNameOriginal = "App"
