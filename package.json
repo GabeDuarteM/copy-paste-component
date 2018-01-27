@@ -1,6 +1,6 @@
 {
   "name": "copy-paste-component",
-  "version": "1.0.5",
+  "version": "0.0.0-development",
   "description": "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
@@ -29,6 +29,7 @@
     "dist"
   ],
   "scripts": {
+    "commit": "git-cz",
     "start": "yarn build:dev",
     "prebuild": "yarn clean",
     "build": "babel src -d dist --ignore *.test.js",
@@ -39,7 +40,9 @@
     "test": "jest",
     "test:w": "yarn test --watch",
     "build:ci": "yarn lint && yarn test --coverage && yarn build && codecov",
-    "prepublishOnly": "yarn build:ci"
+    "prepublishOnly": "yarn build:ci",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "bin": {
     "copy-paste-component": "dist/bin.js",
@@ -63,11 +66,18 @@
       "src/*.js"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -75,7 +85,9 @@
     "eslint-plugin-prettier": "^2.5.0",
     "jest": "^22.1.4",
     "prettier": "^1.10.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "semantic-release": "^12.4.0",
+    "travis-deploy-once": "^4.3.3"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
