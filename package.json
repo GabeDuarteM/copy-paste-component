@@ -39,7 +39,7 @@
     "lint:fix": "eslint src/*.js --fix",
     "test": "jest",
     "test:w": "yarn test --watch",
-    "build:ci": "yarn lint && yarn test --coverage && yarn build && codecov",
+    "build:ci": "yarn lint && yarn test --coverage && yarn build",
     "prepublishOnly": "yarn build:ci",
     "travis-deploy-once": "travis-deploy-once",
     "semantic-release": "semantic-release"
