@@ -1,11 +1,16 @@
-import copyPasteComponent from "./copyPasteComponent"
+import implementCommands from "./implementCommands"
 
-jest.mock("./copyPasteComponent", () => jest.fn(() => {}))
+jest.mock("./implementCommands")
 
 describe("bin", () => {
-  it("should call copyPasteComponent", () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
+  it("should call implementCommands", () => {
     // eslint-disable-next-line global-require
     require("./bin")
-    expect(copyPasteComponent).toHaveBeenCalledTimes(1)
+
+    expect(implementCommands).toHaveBeenCalledTimes(1)
   })
 })
