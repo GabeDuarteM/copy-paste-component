@@ -1,7 +1,8 @@
 {
   "name": "copy-paste-component",
   "version": "0.0.0-development",
-  "description": "A tool to create components, by copying and pasting existing ones.",
+  "description":
+    "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
     "cli-app",
@@ -21,13 +22,12 @@
     "app",
     "boilerplate"
   ],
-  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author":
+    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
   "main": "bin/copy-paste-component.js",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "commit": "git-cz",
     "start": "yarn build:dev",
@@ -59,16 +59,15 @@
     "node": ">=6"
   },
   "jest": {
-    "modulePathIgnorePatterns": [
-      "<rootDir>/fixtures/"
-    ],
-    "collectCoverageFrom": [
-      "src/*.js"
-    ]
+    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"],
+    "collectCoverageFrom": ["src/*.js"]
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "yarn build:ci"
     }
   },
   "devDependencies": {
@@ -83,6 +82,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-prettier": "^2.5.0",
+    "ghooks": "^2.0.2",
     "jest": "^22.1.4",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
