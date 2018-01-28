@@ -74,13 +74,7 @@ There is also an option to skip the questions, providing them directly when you 
 
 ## Roadmap
 
-* [x] Make it work with components using sub folders (e.g. `App/App.js`)
-* [x] Make it work with components not using sub folders (e.g. just `App.js`)
-* [x] Add tests coverage
-* [ ] Accept arguments that answer the three initial questions
-* [ ] Integrate with editors (Initially just VSCode, but you can suggest more at the issues page)
-* [ ] Prompt which files to copy
-* [ ] Make it work with ... (you can suggest more use cases at the issues page)
+See [Roadmap](https://github.com/GabrielDuarteM/copy-paste-component/projects/1)
 
 ## Changelog
 
