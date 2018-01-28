@@ -82,7 +82,7 @@ export default NewApp
 
 ## Changelog
 
-See [CHANGELOG.md](https://github.com/GabrielDuarteM/copy-paste-component/blob/master/CHANGELOG.md)
+See [Releases](https://github.com/GabrielDuarteM/copy-paste-component/releases)
 
 ## License
 
