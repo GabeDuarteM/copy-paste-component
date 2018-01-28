@@ -31,6 +31,12 @@ src/components/NewApp/index.js
 
 `yarn global add copy-paste-component` or `npm i -g copy-paste-component`
 
+## Editor integration
+
+Are you looking for an editor extension? Check the ones available:
+
+* [Visual Studio Code](https://github.com/GabrielDuarteM/copy-paste-component-vscode)
+
 ## Usage
 
 On the root of your project, run `cpc` or `copy-paste-component`.
