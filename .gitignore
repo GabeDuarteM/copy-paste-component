@@ -61,3 +61,6 @@ typings/
 .next
 
 dist
+
+# npm lock file (already using the yarn one)
+package-lock.json
