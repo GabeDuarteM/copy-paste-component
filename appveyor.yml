@@ -12,4 +12,7 @@ test_script:
   - node --version && npm --version && yarn --version
   - yarn build:ci
 
+on_success:
+  - yarn codecov
+
 build: off
