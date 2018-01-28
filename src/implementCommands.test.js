@@ -25,4 +25,19 @@ describe("implementCommands", () => {
     expect(copy).toHaveBeenCalledTimes(1)
     expect(defaultCommand).not.toHaveBeenCalled()
   })
+
+  it("should call copy with the right args when copy command is called", () => {
+    implementCommands([
+      "copy",
+      "componentToBeCopiedPath",
+      "newComponentName",
+      "newComponentLocation",
+    ])
+
+    expect(copy).toHaveBeenCalledWith(
+      "componentToBeCopiedPath",
+      "newComponentName",
+      "newComponentLocation",
+    )
+  })
 })
