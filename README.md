@@ -1,7 +1,5 @@
 # copy-paste-component
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/GabrielDuarteM/copy-paste-component.svg)](https://greenkeeper.io/)
-
 [![travis](https://img.shields.io/travis/GabrielDuarteM/copy-paste-component/master.svg)](https://travis-ci.org/GabrielDuarteM/copy-paste-component)
 [![appveyor](https://img.shields.io/appveyor/ci/gabrielduartem/copy-paste-component/master.svg)](https://ci.appveyor.com/project/GabrielDuarteM/copy-paste-component)
 [![codecov](https://img.shields.io/codecov/c/github/GabrielDuarteM/copy-paste-component.svg)](https://codecov.io/gh/GabrielDuarteM/copy-paste-component)
