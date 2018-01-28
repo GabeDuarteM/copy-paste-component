@@ -1,6 +1,6 @@
 import { prompt } from "inquirer"
-import { basename, extname, dirname, join } from "path"
 import componentFinder from "./componentFinder"
+import getDefaultComponentPath from "./getDefaultComponentPath"
 
 export default async () => {
   const components = await componentFinder()
@@ -31,19 +31,7 @@ export default async () => {
       default: ({
         componentToBeCopied: defComponentToBeCopied,
         componentName: defComponentName,
-      }) => {
-        const componentBasename = basename(
-          defComponentToBeCopied,
-          extname(defComponentToBeCopied),
-        )
-
-        const parentPath = dirname(defComponentToBeCopied)
-        const parentBasename = basename(parentPath)
-
-        return parentBasename === componentBasename
-          ? join(dirname(parentPath), defComponentName)
-          : parentPath
-      },
+      }) => getDefaultComponentPath(defComponentToBeCopied, defComponentName),
     },
   ])
 

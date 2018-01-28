@@ -1,7 +1,7 @@
 import { prompt } from "inquirer"
-import { join } from "path"
 import promptParameters from "./promptParameters"
 import componentFinder from "./componentFinder"
+import getDefaultComponentPath from "./getDefaultComponentPath"
 
 jest.mock("inquirer", () => ({
   prompt: jest.fn(() =>
@@ -24,11 +24,13 @@ jest.mock("./componentFinder", () =>
   ),
 )
 
+jest.mock("./getDefaultComponentPath")
+
 describe("promptParameters", () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-  it("should call ", async () => {
+  it("should call prompt and getDefaultComponentPath with the default parameters", async () => {
     await promptParameters()
 
     const prompts = [
@@ -68,23 +70,15 @@ describe("promptParameters", () => {
     expect(prompt.mock.calls[0][0][2].name).toEqual(prompts[2].name)
     expect(prompt.mock.calls[0][0][2].message).toEqual(prompts[2].message)
     expect(prompt.mock.calls[0][0][2].type).toEqual(prompts[2].type)
-    expect(
-      prompt.mock.calls[0][0][2].default({
-        componentToBeCopied: "src/components/App/App.js",
-        componentName: "NewApp",
-      }),
-    ).toEqual(join("src", "components", "NewApp"))
-  })
-
-  it("should return the correct default path when the component's parent folder name is different than the component's name", async () => {
-    await promptParameters()
-
-    expect(
-      prompt.mock.calls[0][0][2].default({
-        componentToBeCopied: join("src", "components", "App"),
-        componentName: "NewApp",
-      }),
-    ).toBe(join("src", "components"))
+    prompt.mock.calls[0][0][2].default({
+      componentToBeCopied: "src/components/App/App.js",
+      componentName: "NewApp",
+    })
+    expect(getDefaultComponentPath).toHaveBeenCalledTimes(1)
+    expect(getDefaultComponentPath).toHaveBeenCalledWith(
+      "src/components/App/App.js",
+      "NewApp",
+    )
   })
 
   it("should log a message if no components are found", async () => {
