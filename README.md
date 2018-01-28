@@ -68,6 +68,8 @@ const NewApp = () => <div>Hello World</div>
 export default NewApp
 ```
 
+There is also an option to skip the questions, providing them directly when you call the package, using the `copy` command, like `cpc copy src/components/App/App.js NewApp src/components/NewApp`. The first argument is the `path of component you want to copy`, the second is the `name of the new component`, and the last one is the `path where the component will be created`.
+
 ![Usage](https://thumbs.gfycat.com/ColorlessSelfassuredDonkey-max-14mb.gif)
 
 ## Roadmap

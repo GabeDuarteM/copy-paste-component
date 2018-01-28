@@ -1,4 +1,4 @@
 #! /usr/bin/env node
-import copyPasteComponent from "./copyPasteComponent"
+import implementCommands from "./implementCommands"
 
-copyPasteComponent()
+implementCommands()
