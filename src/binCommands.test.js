@@ -32,11 +32,7 @@ describe("binCommands", () => {
   })
 
   it("should call copyPasteComponent with the right arguments when defaultCommand is called", async () => {
-    await defaultCommand(
-      "componentToBeCopied",
-      "componentName",
-      "componentLocation",
-    )
+    await defaultCommand()
 
     expect(copyPasteComponent).toHaveBeenCalledWith(
       "componentToBeCopied",

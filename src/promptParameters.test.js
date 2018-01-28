@@ -88,8 +88,6 @@ describe("promptParameters", () => {
   })
 
   it("should log a message if no components are found", async () => {
-    // await promptParameters()
-
     componentFinder.mockImplementation(() => Promise.resolve([]))
 
     await expect(promptParameters()).rejects.toThrow(
