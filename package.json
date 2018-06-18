@@ -90,7 +90,7 @@
     "jest": "^22.1.4",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
-    "semantic-release": "^12.4.0",
+    "semantic-release": "^15.5.5",
     "travis-deploy-once": "^4.3.3"
   },
   "dependencies": {
