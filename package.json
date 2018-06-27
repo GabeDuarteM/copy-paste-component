@@ -79,7 +79,7 @@
     "babel-eslint": "^8.2.1",
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.0",
-    "commitizen": "^2.9.6",
+    "commitizen": "^2.10.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "12.1.0",
