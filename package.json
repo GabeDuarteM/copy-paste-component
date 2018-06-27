@@ -87,7 +87,7 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-prettier": "^2.5.0",
     "ghooks": "^2.0.2",
-    "jest": "^22.1.4",
+    "jest": "^23.2.0",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "semantic-release": "^12.4.0",
