@@ -91,7 +91,7 @@
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "semantic-release": "^12.4.0",
-    "travis-deploy-once": "^4.3.3"
+    "travis-deploy-once": "^4.4.1"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
