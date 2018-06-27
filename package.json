@@ -56,7 +56,7 @@
     "url": "https://github.com/GabrielDuarteM/copy-paste-component/issues"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=6.14.3"
   },
   "jest": {
     "modulePathIgnorePatterns": [
