@@ -28,12 +28,8 @@ describe("copyPasteComponent", () => {
   afterEach(() => {
     console.log = clgLogBackup
   })
-  it("should call all the mocked functions properly", async () => {
-    await copyPasteComponent(
-      "App",
-      "NewApp",
-      join("src", "components", "NewApp"),
-    )
+  it("should call all the mocked functions properly", () => {
+    copyPasteComponent("App", "NewApp", join("src", "components", "NewApp"))
 
     expect(listFilesInsideDir).toHaveBeenCalledTimes(1)
     expect(listFilesInsideDir).toHaveBeenCalledWith("App")

@@ -10,10 +10,6 @@ export const defaultCommand = async () => {
   copyPasteComponent(componentToBeCopied, componentName, componentLocation)
 }
 
-export const copy = async (
-  componentToBeCopied,
-  componentName,
-  componentLocation,
-) => {
+export const copy = (componentToBeCopied, componentName, componentLocation) => {
   copyPasteComponent(componentToBeCopied, componentName, componentLocation)
 }

@@ -4,11 +4,7 @@ import listFilesInsideDir from "./listFilesInsideDir"
 import getRenamedFiles from "./getRenamedFiles"
 import copyFiles from "./copyFiles"
 
-export default async (
-  componentToBeCopied,
-  componentName,
-  componentLocation,
-) => {
+export default (componentToBeCopied, componentName, componentLocation) => {
   const files = listFilesInsideDir(componentToBeCopied)
 
   const componentNameOriginal = basename(

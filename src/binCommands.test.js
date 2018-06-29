@@ -24,8 +24,8 @@ describe("binCommands", () => {
     expect(copyPasteComponent).toHaveBeenCalledTimes(1)
   })
 
-  it("should call just copyPasteComponent when the copy is called", async () => {
-    await copy("componentToBeCopied", "componentName", "componentLocation")
+  it("should call just copyPasteComponent when the copy is called", () => {
+    copy("componentToBeCopied", "componentName", "componentLocation")
 
     expect(copyPasteComponent).toHaveBeenCalledTimes(1)
     expect(promptParameters).not.toHaveBeenCalled()
@@ -41,8 +41,8 @@ describe("binCommands", () => {
     )
   })
 
-  it("should call copyPasteComponent with the right arguments when copy is called", async () => {
-    await copy("componentToBeCopied", "componentName", "componentLocation")
+  it("should call copyPasteComponent with the right arguments when copy is called", () => {
+    copy("componentToBeCopied", "componentName", "componentLocation")
 
     expect(copyPasteComponent).toHaveBeenCalledWith(
       "componentToBeCopied",
