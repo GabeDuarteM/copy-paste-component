@@ -90,8 +90,7 @@
     "jest": "^23.2.0",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
-    "semantic-release": "^15.6.0",
-    "travis-deploy-once": "^4.3.3"
+    "semantic-release": "^15.6.0"
   },
   "dependencies": {
     "fs-extra": "^6.0.1",

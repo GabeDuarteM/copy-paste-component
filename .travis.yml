@@ -6,6 +6,6 @@ script:
   - yarn build:ci
 after_success:
   - yarn codecov
-  - npm run travis-deploy-once "npm run semantic-release"
+  - yarn semantic-release
 os:
   - linux
