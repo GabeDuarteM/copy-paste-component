@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.5",
+    "babel-eslint": "^8.2.6",
     "babel-preset-env": "^1.7.0",
     "codecov": "^3.0.2",
     "commitizen": "^2.10.1",
