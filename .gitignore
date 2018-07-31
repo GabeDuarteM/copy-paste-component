@@ -60,7 +60,7 @@ typings/
 # next.js build output
 .next
 
-dist
+build
 
 # npm lock file (already using the yarn one)
 package-lock.json

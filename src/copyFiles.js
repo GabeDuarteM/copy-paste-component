@@ -1,6 +1,6 @@
 import overwriteComponentName from "./overwriteComponentName"
 
-export default (
+const copyFiles = (
   filesRenamed,
   files,
   componentNameOriginal,
@@ -15,3 +15,5 @@ export default (
     )
   }
 }
+
+export default copyFiles

@@ -1,6 +1,6 @@
 import { extname, basename, dirname, join } from "path"
 
-export default (componentToBeCopied, componentName) => {
+const getDefaultComponentPath = (componentToBeCopied, componentName) => {
   const componentBasename = basename(
     componentToBeCopied,
     extname(componentToBeCopied),
@@ -13,3 +13,5 @@ export default (componentToBeCopied, componentName) => {
     ? join(dirname(parentPath), componentName)
     : parentPath
 }
+
+export default getDefaultComponentPath

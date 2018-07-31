@@ -1,7 +1,9 @@
 import yargs from "yargs"
 import { copy, defaultCommand } from "./binCommands"
 
-export default (argsToInject = process.argv.slice(2, process.argv.length)) => {
+const implementCommands = (
+  argsToInject = process.argv.slice(2, process.argv.length),
+) => {
   // eslint-disable-next-line no-unused-expressions
   yargs(argsToInject)
     .usage("cpc [args]")
@@ -30,7 +32,9 @@ export default (argsToInject = process.argv.slice(2, process.argv.length)) => {
     .command(
       "*",
       "copy a component's structure asking for the parameters",
-      () => {},
+      () => {
+        // EMPTY
+      },
       () => {
         defaultCommand()
       },
@@ -39,3 +43,5 @@ export default (argsToInject = process.argv.slice(2, process.argv.length)) => {
     .alias("v", "version")
     .help().argv
 }
+
+export default implementCommands

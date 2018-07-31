@@ -2,7 +2,7 @@ import { prompt } from "inquirer"
 import componentFinder from "./componentFinder"
 import getDefaultComponentPath from "./getDefaultComponentPath"
 
-export default async () => {
+const promptParameters = async () => {
   const components = await componentFinder()
 
   if (components.length === 0) {
@@ -37,3 +37,5 @@ export default async () => {
 
   return Promise.resolve(answers)
 }
+
+export default promptParameters

@@ -1,5 +1,4 @@
 {
-  "extends": ["config:base"],
-  "rangeStrategy": "bump",
+  "extends": ["config:base", ":preserveSemverRanges"],
   "ignorePaths": ["fixtures/**/*"]
 }

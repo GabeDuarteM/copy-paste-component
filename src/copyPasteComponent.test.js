@@ -17,7 +17,11 @@ jest.mock("./getRenamedFiles", () =>
   jest.fn(() => ["NewApp.js", "NewApp.test.js", "NewApp.md", "index.md"]),
 )
 
-jest.mock("./copyFiles", () => jest.fn(() => {}))
+jest.mock("./copyFiles", () =>
+  jest.fn(() => {
+    // EMPTY
+  }),
+)
 
 describe("copyPasteComponent", () => {
   const clgLogBackup = console.log

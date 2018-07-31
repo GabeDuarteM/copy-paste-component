@@ -1,8 +1,7 @@
 {
   "name": "copy-paste-component",
   "version": "0.0.0-development",
-  "description":
-    "A tool to create components, by copying and pasting existing ones.",
+  "description": "A tool to create components, by copying and pasting existing ones.",
   "keywords": [
     "cli",
     "cli-app",
@@ -22,32 +21,27 @@
     "app",
     "boilerplate"
   ],
-  "author":
-    "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
+  "author": "Gabriel Duarte <gabrielqduarte@gmail.com> (https://github.com/GabrielDuarteM/)",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "./build/index.d.ts",
   "homepage": "https://github.com/GabrielDuarteM/copy-paste-component",
-  "files": ["dist"],
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "commit": "git-cz",
-    "start": "yarn build:dev",
-    "prebuild": "yarn clean",
-    "build": "babel src -d dist --ignore *.test.js",
-    "postbuild": "cpx \"src/index.d.ts\" dist",
-    "build:dev": "yarn build --watch -s",
-    "clean": "rimraf dist",
-    "lint": "eslint src/*.js",
-    "lint:fix": "eslint src/*.js --fix",
-    "test": "jest",
-    "test:w": "yarn test --watch",
-    "build:ci": "yarn lint && yarn test --coverage && yarn build",
-    "prepublishOnly": "yarn build:ci",
-    "semantic-release": "semantic-release"
+    "start": "gd-scripts start",
+    "build": "gd-scripts build",
+    "lint": "gd-scripts lint",
+    "lint:fix": "gd-scripts lint --fix",
+    "test": "gd-scripts test",
+    "ci": "gd-scripts ci",
+    "prepublishOnly": "yarn ci",
+    "release": "semantic-release"
   },
   "bin": {
-    "copy-paste-component": "dist/bin.js",
-    "cpc": "dist/bin.js"
+    "copy-paste-component": "build/bin.js",
+    "cpc": "build/bin.js"
   },
   "repository": {
     "type": "git",
@@ -59,31 +53,15 @@
   "engines": {
     "node": ">=6"
   },
-  "jest": {
-    "modulePathIgnorePatterns": ["<rootDir>/fixtures/"],
-    "collectCoverageFrom": ["src/*.js"]
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.5",
-    "babel-preset-env": "^1.7.0",
     "codecov": "^3.0.2",
-    "commitizen": "^2.10.1",
-    "cpx": "^1.5.0",
-    "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^5.0.1",
-    "eslint-config-airbnb-base": "13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "2.13.0",
-    "eslint-plugin-prettier": "^2.6.1",
-    "jest": "^23.2.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "gd-scripts": "^1.0.2",
     "prettier": "^1.13.7",
-    "rimraf": "^2.6.2",
     "semantic-release": "^15.6.0"
   },
   "dependencies": {

@@ -6,7 +6,7 @@ const ignore = [
   "**/*.{test,spec,stories}.*",
 ]
 
-export default (cwd = process.cwd()) =>
+const componentFinder = (cwd = process.cwd()) =>
   new Promise((resolve, reject) =>
     glob("**/[A-Z]*.{js,jsx,tsx}", { ignore, cwd }, (err, matches) => {
       if (err) {
@@ -16,3 +16,5 @@ export default (cwd = process.cwd()) =>
       resolve(matches)
     }),
   )
+
+export default componentFinder

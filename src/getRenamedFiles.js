@@ -1,6 +1,6 @@
 import { basename } from "path"
 
-export default (files, componentNameOriginal, newComponentName) =>
+const getRenamedFiles = (files, componentNameOriginal, newComponentName) =>
   files.map(file => {
     const x = basename(file).replace(
       new RegExp(componentNameOriginal, "g"),
@@ -8,3 +8,5 @@ export default (files, componentNameOriginal, newComponentName) =>
     )
     return x
   })
+
+export default getRenamedFiles

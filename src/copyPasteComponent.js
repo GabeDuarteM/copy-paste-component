@@ -4,7 +4,11 @@ import listFilesInsideDir from "./listFilesInsideDir"
 import getRenamedFiles from "./getRenamedFiles"
 import copyFiles from "./copyFiles"
 
-export default (componentToBeCopied, componentName, componentLocation) => {
+const copyPasteComponent = (
+  componentToBeCopied,
+  componentName,
+  componentLocation,
+) => {
   const files = listFilesInsideDir(componentToBeCopied)
 
   const componentNameOriginal = basename(
@@ -26,3 +30,5 @@ export default (componentToBeCopied, componentName, componentLocation) => {
     )}`,
   )
 }
+
+export default copyPasteComponent

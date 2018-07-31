@@ -1,7 +1,12 @@
 import { readFileSync, writeFileSync, ensureDirSync } from "fs-extra"
 import { dirname } from "path"
 
-export default (fileSrc, fileDest, componentNameOriginal, newComponentName) => {
+const overwriteComponentName = (
+  fileSrc,
+  fileDest,
+  componentNameOriginal,
+  newComponentName,
+) => {
   const data = readFileSync(fileSrc, "utf-8")
 
   const newValue = data.replace(
@@ -13,3 +18,5 @@ export default (fileSrc, fileDest, componentNameOriginal, newComponentName) => {
 
   writeFileSync(fileDest, newValue, "utf-8")
 }
+
+export default overwriteComponentName

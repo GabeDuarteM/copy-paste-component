@@ -2,7 +2,11 @@ import copyPasteComponent from "./copyPasteComponent"
 import promptParameters from "./promptParameters"
 import { copy, defaultCommand } from "./binCommands"
 
-jest.mock("./copyPasteComponent", () => jest.fn(() => {}))
+jest.mock("./copyPasteComponent", () =>
+  jest.fn(() => {
+    /* EMPTY */
+  }),
+)
 jest.mock("./promptParameters", () =>
   jest.fn(() =>
     Promise.resolve({
