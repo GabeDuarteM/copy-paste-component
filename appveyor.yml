@@ -10,7 +10,7 @@ install:
 
 test_script:
   - node --version && npm --version && yarn --version
-  - yarn build:ci
+  - yarn ci
 
 on_success:
   - yarn codecov
