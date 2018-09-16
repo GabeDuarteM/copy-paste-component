@@ -60,7 +60,7 @@
     "codecov": "^3.0.2",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.2",
-    "gd-scripts": "^1.0.2",
+    "gd-scripts": "^3.0.0",
     "prettier": "^1.13.7",
     "semantic-release": "^15.6.0"
   },
