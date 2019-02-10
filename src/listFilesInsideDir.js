@@ -1,9 +1,9 @@
-import klawSync from "klaw-sync"
-import { dirname } from "path"
+import klawSync from 'klaw-sync'
+import { dirname } from 'path'
 
-const listFilesInsideDir = componentToBeCopied =>
+const listFilesInsideDir = (componentToBeCopied) =>
   klawSync(dirname(componentToBeCopied), {
     nodir: true,
-  }).map(x => x.path)
+  }).map((x) => x.path)
 
 export default listFilesInsideDir

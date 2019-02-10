@@ -1,4 +1,4 @@
-import overwriteComponentName from "./overwriteComponentName"
+import overwriteComponentName from './overwriteComponentName'
 
 const copyFiles = (
   filesRenamed,

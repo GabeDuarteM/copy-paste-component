@@ -1,15 +1,15 @@
-import implementCommands from "./implementCommands"
+import implementCommands from './implementCommands'
 
-jest.mock("./implementCommands")
+jest.mock('./implementCommands')
 
-describe("bin", () => {
+describe('bin', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
-  it("should call implementCommands", () => {
+  it('should call implementCommands', () => {
     // eslint-disable-next-line global-require
-    require("./bin")
+    require('./bin')
 
     expect(implementCommands).toHaveBeenCalledTimes(1)
   })

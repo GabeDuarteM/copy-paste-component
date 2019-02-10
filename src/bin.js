@@ -1,4 +1,4 @@
 #! /usr/bin/env node
-import implementCommands from "./implementCommands"
+import implementCommands from './implementCommands'
 
 implementCommands()

@@ -1,5 +1,5 @@
-import copyPasteComponent from "./copyPasteComponent"
-import promptParameters from "./promptParameters"
+import copyPasteComponent from './copyPasteComponent'
+import promptParameters from './promptParameters'
 
 export const defaultCommand = async () => {
   const {

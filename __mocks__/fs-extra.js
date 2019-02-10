@@ -1,4 +1,4 @@
-const fs = jest.genMockFromModule("fs-extra")
+const fs = jest.genMockFromModule('fs-extra')
 
 let file = `
 import React, { Component } from 'react';
@@ -24,7 +24,7 @@ class App extends Component {
 export default App;
 `
 
-const setFileContent = content => {
+const setFileContent = (content) => {
   file = content
 }
 

@@ -1,24 +1,24 @@
-import getRenamedFiles from "./getRenamedFiles"
+import getRenamedFiles from './getRenamedFiles'
 
-describe("getRenamedFiles", () => {
-  it("should return a list of renamed files", () => {
+describe('getRenamedFiles', () => {
+  it('should return a list of renamed files', () => {
     const files = [
-      "src/components/App.js",
-      "src/components/App.test.js",
-      "src/components/App.md",
-      "src/components/App.css",
-      "src/components/index.js",
+      'src/components/App.js',
+      'src/components/App.test.js',
+      'src/components/App.md',
+      'src/components/App.css',
+      'src/components/index.js',
     ]
     const newFiles = [
-      "NewApp.js",
-      "NewApp.test.js",
-      "NewApp.md",
-      "NewApp.css",
-      "index.js",
+      'NewApp.js',
+      'NewApp.test.js',
+      'NewApp.md',
+      'NewApp.css',
+      'index.js',
     ]
 
-    const componentNameOriginal = "App"
-    const newComponentName = "NewApp"
+    const componentNameOriginal = 'App'
+    const newComponentName = 'NewApp'
     const renamedFiles = getRenamedFiles(
       files,
       componentNameOriginal,

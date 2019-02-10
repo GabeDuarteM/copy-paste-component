@@ -1,8 +1,8 @@
-import { basename, extname, dirname, join } from "path"
+import { basename, extname, dirname, join } from 'path'
 
-import listFilesInsideDir from "./listFilesInsideDir"
-import getRenamedFiles from "./getRenamedFiles"
-import copyFiles from "./copyFiles"
+import listFilesInsideDir from './listFilesInsideDir'
+import getRenamedFiles from './getRenamedFiles'
+import copyFiles from './copyFiles'
 
 const copyPasteComponent = (
   componentToBeCopied,
@@ -20,7 +20,7 @@ const copyPasteComponent = (
     files,
     componentNameOriginal,
     componentName,
-  ).map(x => join(componentLocation, x))
+  ).map((x) => join(componentLocation, x))
 
   copyFiles(filesRenamed, files, componentNameOriginal, componentName)
 

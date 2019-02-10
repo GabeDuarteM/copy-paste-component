@@ -1,4 +1,4 @@
-declare module "copy-paste-component" {
+declare module 'copy-paste-component' {
   declare function componentFinder(cwd: string): Promise<string[]>
   declare function copyPasteComponent(
     componentToBeCopied: string,

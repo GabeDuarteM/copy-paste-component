@@ -1,4 +1,4 @@
-import { extname, basename, dirname, join } from "path"
+import { extname, basename, dirname, join } from 'path'
 
 const getDefaultComponentPath = (componentToBeCopied, componentName) => {
   const componentBasename = basename(

@@ -1,17 +1,17 @@
-import { readFileSync, writeFileSync, ensureDirSync } from "fs-extra"
-import { dirname } from "path"
-import overwriteComponentName from "./overwriteComponentName"
+import { readFileSync, writeFileSync, ensureDirSync } from 'fs-extra'
+import { dirname } from 'path'
+import overwriteComponentName from './overwriteComponentName'
 
-describe("overwriteComponentName", () => {
+describe('overwriteComponentName', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
 
-  it("should look inside the file and replace the former component name with the new component name", () => {
-    const fileSrc = "fileSrc"
-    const fileDest = "fileDest/NewApp"
-    const oldComponentName = "App"
-    const newComponentName = "NewApp"
+  it('should look inside the file and replace the former component name with the new component name', () => {
+    const fileSrc = 'fileSrc'
+    const fileDest = 'fileDest/NewApp'
+    const oldComponentName = 'App'
+    const newComponentName = 'NewApp'
 
     const expectedFileContent = `
 import React, { Component } from 'react';
@@ -45,7 +45,7 @@ export default NewApp;
     )
 
     expect(readFileSync).toHaveBeenCalledTimes(1)
-    expect(readFileSync).toHaveBeenCalledWith(fileSrc, "utf-8")
+    expect(readFileSync).toHaveBeenCalledWith(fileSrc, 'utf-8')
 
     expect(ensureDirSync).toHaveBeenCalledTimes(1)
     expect(ensureDirSync).toHaveBeenCalledWith(dirname(fileDest))
@@ -54,7 +54,7 @@ export default NewApp;
     expect(writeFileSync).toHaveBeenCalledWith(
       fileDest,
       expectedFileContent,
-      "utf-8",
+      'utf-8',
     )
   })
 })

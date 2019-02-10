@@ -1,57 +1,57 @@
-import copyPasteComponent from "./copyPasteComponent"
-import promptParameters from "./promptParameters"
-import { copy, defaultCommand } from "./binCommands"
+import copyPasteComponent from './copyPasteComponent'
+import promptParameters from './promptParameters'
+import { copy, defaultCommand } from './binCommands'
 
-jest.mock("./copyPasteComponent", () =>
+jest.mock('./copyPasteComponent', () =>
   jest.fn(() => {
     /* EMPTY */
   }),
 )
-jest.mock("./promptParameters", () =>
+jest.mock('./promptParameters', () =>
   jest.fn(() =>
     Promise.resolve({
-      componentToBeCopied: "componentToBeCopied",
-      componentName: "componentName",
-      componentLocation: "componentLocation",
+      componentToBeCopied: 'componentToBeCopied',
+      componentName: 'componentName',
+      componentLocation: 'componentLocation',
     }),
   ),
 )
 
-describe("binCommands", () => {
+describe('binCommands', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
-  it("should call promptParameters and copyPasteComponent when defaultCommand is called", async () => {
+  it('should call promptParameters and copyPasteComponent when defaultCommand is called', async () => {
     await defaultCommand()
 
     expect(promptParameters).toHaveBeenCalledTimes(1)
     expect(copyPasteComponent).toHaveBeenCalledTimes(1)
   })
 
-  it("should call just copyPasteComponent when the copy is called", () => {
-    copy("componentToBeCopied", "componentName", "componentLocation")
+  it('should call just copyPasteComponent when the copy is called', () => {
+    copy('componentToBeCopied', 'componentName', 'componentLocation')
 
     expect(copyPasteComponent).toHaveBeenCalledTimes(1)
     expect(promptParameters).not.toHaveBeenCalled()
   })
 
-  it("should call copyPasteComponent with the right arguments when defaultCommand is called", async () => {
+  it('should call copyPasteComponent with the right arguments when defaultCommand is called', async () => {
     await defaultCommand()
 
     expect(copyPasteComponent).toHaveBeenCalledWith(
-      "componentToBeCopied",
-      "componentName",
-      "componentLocation",
+      'componentToBeCopied',
+      'componentName',
+      'componentLocation',
     )
   })
 
-  it("should call copyPasteComponent with the right arguments when copy is called", () => {
-    copy("componentToBeCopied", "componentName", "componentLocation")
+  it('should call copyPasteComponent with the right arguments when copy is called', () => {
+    copy('componentToBeCopied', 'componentName', 'componentLocation')
 
     expect(copyPasteComponent).toHaveBeenCalledWith(
-      "componentToBeCopied",
-      "componentName",
-      "componentLocation",
+      'componentToBeCopied',
+      'componentName',
+      'componentLocation',
     )
   })
 })
