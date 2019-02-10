@@ -4,7 +4,7 @@ import { copy, defaultCommand } from "./binCommands"
 const implementCommands = (
   argsToInject = process.argv.slice(2, process.argv.length),
 ) => {
-  // eslint-disable-next-line no-unused-expressions
+  // eslint-disable-next-line babel/no-unused-expressions
   yargs(argsToInject)
     .usage("cpc [args]")
     .command(
