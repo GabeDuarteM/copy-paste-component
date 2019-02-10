@@ -1707,7 +1707,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codecov@^3.0.2:
+codecov@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/codecov/-/codecov-3.1.0.tgz#340bd968d361f256976b5af782dd8ba9f82bc849"
   integrity sha512-aWQc/rtHbcWEQLka6WmBAOpV58J2TwyXqlpAQGhQaSiEUoigTTUk6lLd2vB3kXkhnDyzyH74RXfmV4dq2txmdA==
@@ -2917,7 +2917,7 @@ gd-configs@^3.1.2:
     lodash.has "4.5.2"
     read-pkg-up "4.0.0"
 
-gd-scripts@^4.0.0:
+gd-scripts@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/gd-scripts/-/gd-scripts-4.0.0.tgz#602caf0d8255bc8dafb39d866447ae9a81a084ab"
   integrity sha512-KCDTa4F8rprLJTKzmfMA8sxtU/DfMk03wTBdhYWs/Qz8Yy/1ZBo7PQvqjqtVDeDj+q8bNBE4ce3t8sG1dQhbxA==
@@ -6375,7 +6375,7 @@ sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@^15.6.0:
+semantic-release@15.13.3:
   version "15.13.3"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.3.tgz#412720b9c09f39f04df67478fa409a914107e05b"
   integrity sha512-cax0xPPTtsxHlrty2HxhPql2TTvS74Ni2O8BzwFHxNY/mviVKEhI4OxHzBYJkpVxx1fMVj36+oH7IlP+SJtPNA==
