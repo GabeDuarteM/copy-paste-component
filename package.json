@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "codecov": "3.3.0",
-    "gd-scripts": "4.0.0",
+    "gd-scripts": "5.0.3",
     "semantic-release": "15.13.3"
   },
   "dependencies": {
