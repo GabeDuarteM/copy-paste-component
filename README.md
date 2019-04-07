@@ -1,6 +1,6 @@
 # copy-paste-component
 
-[![travis](https://img.shields.io/travis/GabrielDuarteM/copy-paste-component/master.svg)](https://travis-ci.org/GabrielDuarteM/copy-paste-component)
+[![travis](https://img.shields.io/travis/com/GabrielDuarteM/copy-paste-component/master.svg)](https://travis-ci.com/GabrielDuarteM/copy-paste-component)
 [![appveyor](https://img.shields.io/appveyor/ci/gabrielduartem/copy-paste-component/master.svg)](https://ci.appveyor.com/project/GabrielDuarteM/copy-paste-component)
 [![codecov](https://img.shields.io/codecov/c/github/GabrielDuarteM/copy-paste-component.svg)](https://codecov.io/gh/GabrielDuarteM/copy-paste-component)
 [![npm downloads](https://img.shields.io/npm/dw/copy-paste-component.svg)](https://www.npmjs.com/package/copy-paste-component)
@@ -38,7 +38,7 @@ src/components/NewApp/index.js
 
 Are you looking for an editor extension? Check the ones available:
 
-* [Visual Studio Code](https://github.com/GabrielDuarteM/copy-paste-component-vscode)
+- [Visual Studio Code](https://github.com/GabrielDuarteM/copy-paste-component-vscode)
 
 ## Usage
 
@@ -46,9 +46,9 @@ On the root of your project, run `cpc` or `copy-paste-component`.
 
 It will prompt you three questions:
 
-* `Which component would you like to copy?`
-* `What is the name of the new component?`
-* `What is the location of the new component?`
+- `Which component would you like to copy?`
+- `What is the name of the new component?`
+- `What is the location of the new component?`
 
 When you answer those questions, it will generate a structure that is the same as the one that the selected component uses, but it will change the filename to the one you provided on the second question.
 It will look too inside the file for occurrences of the filename, and if it finds, it replaces with the content of the second question.
@@ -58,7 +58,7 @@ So, given the following file:
 ### App.js
 
 ```js
-import React from "react"
+import React from 'react'
 
 const App = () => <div>Hello World</div>
 
@@ -70,7 +70,7 @@ Becomes the following:
 ### NewApp.js
 
 ```js
-import React from "react"
+import React from 'react'
 
 const NewApp = () => <div>Hello World</div>
 
