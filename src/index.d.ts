@@ -1,11 +1,11 @@
 declare module 'copy-paste-component' {
-  declare function componentFinder(cwd: string): Promise<string[]>
-  declare function copyPasteComponent(
+  function componentFinder(cwd: string): Promise<string[]>
+  function copyPasteComponent(
     componentToBeCopied: string,
     componentName: string,
     componentLocation: string,
   ): void
-  declare function getDefaultComponentPath(
+  function getDefaultComponentPath(
     componentToBeCopied: string,
     componentName: string,
   ): string

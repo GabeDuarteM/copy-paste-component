@@ -2,3 +2,4 @@
 /dist
 /fixtures
 /node_modules
+*.ts
